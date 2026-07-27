@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Home, User, Briefcase, Mail } from "lucide-react";
+import { Home, User, Briefcase, Mail, Award } from "lucide-react";
 
 interface GlassEffectProps {
   children: React.ReactNode;
@@ -129,6 +129,7 @@ export default function Navbar() {
     { icon: <Home size={18} />, label: "Home", href: "/" },
     { icon: <User size={18} />, label: "About", href: "/about" },
     { icon: <Briefcase size={18} />, label: "Projects", href: "/projects" },
+    { icon: <Award size={18} />, label: "Awards", href: "/awards" },
     { icon: <Mail size={18} />, label: "Contact", href: "/contact" },
   ];
 

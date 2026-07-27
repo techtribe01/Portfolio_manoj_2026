@@ -50,7 +50,7 @@ export default function Contact() {
 
   const handleCopyEmail = async () => {
     try {
-      await navigator.clipboard.writeText("nandkishorsoni098765@gmail.com");
+      await navigator.clipboard.writeText("okeymanoj@gmail.com");
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
@@ -137,7 +137,7 @@ export default function Contact() {
       id: "whatsapp",
       type: "capsule",
       label: "WHATSAPP ↗",
-      href: "https://wa.me/7982402954?text=Hi%20Nandkishore!%20I%20just%20came%20across%20your%20amazing%20portfolio%20and%20would%20love%20to%20connect.",
+      href: "https://wa.me/919876543210?text=Hi%20Manoj!%20I%20just%20came%20across%20your%20amazing%20portfolio%20and%20would%20love%20to%20connect.",
       initialX: "18%",
       initialY: "32%",
       rotate: 5,
@@ -146,7 +146,7 @@ export default function Contact() {
       id: "twitter",
       type: "capsule",
       label: "X (TWITTER) ↗",
-      href: "https://x.com/x_nandkishore",
+      href: "https://x.com/okeymanoj",
       initialX: "65%",
       initialY: "18%",
       rotate: -8,
@@ -155,7 +155,7 @@ export default function Contact() {
       id: "telegram",
       type: "capsule",
       label: "TELEGRAM ↗",
-      href: "https://t.me/@Tm_nandkishore",
+      href: "https://t.me/okeymanoj",
       initialX: "78%",
       initialY: "55%",
       rotate: 12,
@@ -164,7 +164,7 @@ export default function Contact() {
       id: "instagram",
       type: "capsule",
       label: "INSTAGRAM ↗",
-      href: "https://www.instagram.com/ig_nandkishore_soni",
+      href: "https://www.instagram.com/okeymanoj",
       initialX: "32%",
       initialY: "12%",
       rotate: -12,
@@ -181,7 +181,7 @@ export default function Contact() {
       id: "linkedin",
       type: "capsule",
       label: "LINKEDIN ↗",
-      href: "https://www.linkedin.com/in/nand-kishore-soni-036783317/",
+      href: "https://www.linkedin.com/in/manojkumarthammisetti/",
       initialX: "8%",
       initialY: "68%",
       rotate: 15,
@@ -189,8 +189,8 @@ export default function Contact() {
     {
       id: "google-skills",
       type: "capsule",
-      label: "GOOGLE SKILLS ↗",
-      href: "https://www.skills.google/public_profiles/17fd8191-5307-48d9-b9cd-dcd29428e518",
+      label: "GITHUB PROFILE ↗",
+      href: "https://github.com/techtribe01",
       initialX: "42%",
       initialY: "38%",
       rotate: -6,
@@ -199,7 +199,7 @@ export default function Contact() {
       id: "github",
       type: "capsule",
       label: "GITHUB ↗",
-      href: "https://github.com/legendxdevil",
+      href: "https://github.com/techtribe01",
       initialX: "46%",
       initialY: "64%",
       rotate: -10,
@@ -261,7 +261,7 @@ export default function Contact() {
             Just drop me a line or interact with the stickers.
           </div>
           <div className="text-center md:text-right">
-            © 2026 Nand Kishore Soni. All rights reserved
+            © 2026 Manoj Kumar Thammisetti. All rights reserved
           </div>
         </div>
       </div>
@@ -422,7 +422,7 @@ export default function Contact() {
           onClick={handleCopyEmail}
           className="font-cormorant font-normal text-4xl sm:text-6xl md:text-7xl lg:text-[7.5rem] leading-none text-[#161616] hover:text-[#F44A22] active:scale-95 transition-all duration-500 text-center select-none cursor-pointer tracking-tighter w-full max-w-7xl break-all"
         >
-          nandkishorsoni098765@gmail.com
+          okeymanoj@gmail.com
         </h1>
 
         {/* Floating Tooltip Indicator */}
