@@ -63,10 +63,10 @@ export default function About() {
         {/* Giant Bold Oswald Title Block */}
         <div ref={titleRef} className="w-full relative select-none mb-8 md:mb-12 flex flex-col gap-3">
           <h1 className="font-oswald font-black text-[10vw] md:text-[11vw] uppercase leading-[0.8] text-[#F44A22] tracking-tighter">
-            NAND
+            MANOJ KUMAR
           </h1>
           <h1 className="font-oswald font-black text-[10vw] md:text-[11vw] uppercase leading-[0.8] text-[#F44A22] tracking-tighter">
-            KISHORE
+            THAMMISETTI
           </h1>
         </div>
 
@@ -83,10 +83,10 @@ export default function About() {
             >
               <div>
                 <h2 className="font-oswald font-bold text-3xl md:text-4xl tracking-wide uppercase text-white mb-4">
-                  CREATIVE CODE &amp; VISUAL DESIGN
+                  FULL-STACK ENGINEER &amp; INNOVATOR
                 </h2>
                 <p className="font-jakarta font-light text-base md:text-lg leading-relaxed text-[#E4E2E3]/95 max-w-2xl">
-                  I believe that design should be both beautiful and functional. I build visual solutions that connect with your audience and inspire action. From web architectures to custom designs, I help communicate your message in a way that resonates with your customers.
+                  I craft cutting-edge solutions spanning quantum machine learning, brain-computer interfaces, and full-stack web development. With a B.Tech in AI &amp; ML from SIETK (CGPA: 8.03), I bridge the gap between complex engineering and user-centric design to create meaningful, high-performance applications.
                 </p>
               </div>
 
@@ -95,7 +95,7 @@ export default function About() {
                 className="text-3xl md:text-4xl transform -rotate-3 select-none text-[#FEF8E8]/90 self-end mt-4 cursor-default"
                 style={{ fontFamily: "'RonthelBrush', cursive" }}
               >
-                Nand Kishore
+                Manoj Kumar
               </div>
             </div>
 
@@ -109,10 +109,10 @@ export default function About() {
               >
                 <div>
                   <h3 className="font-oswald font-black text-2xl md:text-3xl uppercase tracking-tighter mb-2 text-white">
-                    CONNECT &amp; INSPIRE.
+                    LET&apos;S BUILD.
                   </h3>
                   <span className="font-jakarta font-medium text-xs tracking-wider opacity-90 uppercase">
-                    BRIDGING ART &amp; TECHNOLOGY
+                    QUANTUM TECH &amp; NEUROTECH
                   </span>
                 </div>
                 <div className="flex justify-between items-center mt-4">
@@ -137,10 +137,10 @@ export default function About() {
               >
                 <div>
                   <h3 className="font-cormorant font-bold text-2xl md:text-3xl italic leading-tight text-[#161616] mb-3">
-                    Conversations with design thinking.
+                    Engineering with innovation at the core.
                   </h3>
                   <p className="font-jakarta font-light text-sm text-gray-700 leading-relaxed">
-                    Focusing on custom software architectures, high performance frontend rendering, and pixel-perfect design guidelines to create outstanding products.
+                    Specializing in quantum ML, BCI systems, full-stack development, and AI engineering with a focus on creating scalable, high-performance solutions.
                   </p>
                 </div>
                 <div className="flex items-center gap-1.5 text-xs font-mono text-[#F44A22] font-semibold mt-4">
@@ -166,7 +166,7 @@ export default function About() {
             {/* Mockup Overlay Badges */}
             {/* Top-Right Purple Badge */}
             <div className="absolute top-6 right-6 bg-[#7B2CBF] text-[#FEF8E8] font-bold text-[10px] md:text-xs uppercase px-4 py-1.5 rounded-full border-2 border-[#161616] select-none shadow-sm z-10">
-              ART SIGNING
+              INNOVATOR
             </div>
 
           </div>

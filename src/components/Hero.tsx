@@ -13,11 +13,11 @@ export default function Hero() {
   const { startTransition } = usePageTransition();
 
   const phrases = useMemo(() => [
-    "UI/UX DESIGNER",
+    "QUANTUM ML ENGINEER",
     "FULL-STACK DEVELOPER",
-    "CREATIVE CODER",
-    "INNOVATE SOLUTIONS",
-    "DESIGN EXPERIENCES"
+    "NEUROTECH INNOVATOR",
+    "AI SYSTEMS BUILDER",
+    "TECH VISIONARY"
   ], []);
 
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
@@ -269,12 +269,12 @@ export default function Hero() {
               className="text-[#161616] hover:text-[#F44A22] text-3xl font-medium tracking-wide whitespace-nowrap transform -rotate-6 transition-all duration-300 hover:scale-105 cursor-default"
               style={{ fontFamily: "'RonthelBrush', cursive" }}
             >
-              Manoj Kumar
+              Manoj Kumar Thammisetti
             </div>
           </div>
           {/* Bio Text */}
           <p className="text-[#161616]/85 text-xs font-jakarta leading-relaxed font-medium mt-1">
-            Hi, I&apos;m Manoj Kumar Thammisetti. I bridge the gap between engineering and art to design immersive, high-performance web experiences.
+            Full-stack engineer &amp; innovator in quantum ML, neurotech, and AI systems. B.Tech in AI &amp; ML (SIETK, 2026). Founder of Neurocommand Labs &amp; Infinite Stackers.
           </p>
           {/* Call to Action Button */}
           <button 
@@ -346,7 +346,7 @@ export default function Hero() {
         {/* Mobile/Tablet Overlay Card (Frosted light glass layout) */}
         <div className="absolute bottom-20 left-6 right-6 z-30 flex flex-col items-center justify-center text-center lg:hidden bg-white/45 backdrop-blur-md p-5 rounded-2xl border border-white/30 pointer-events-auto max-w-md mx-auto">
           <p className="text-[#161616] text-xs font-jakarta leading-relaxed mb-4">
-            Hi, I&apos;m Manoj Kumar Thammisetti. I bridge the gap between engineering and art to design immersive, high-performance web experiences.
+            Full-stack engineer &amp; innovator in quantum ML, neurotech, and AI systems. B.Tech in AI &amp; ML (SIETK, 2026).
           </p>
           <div className="flex items-center gap-4 w-full justify-center">
             <button 
@@ -367,15 +367,15 @@ export default function Hero() {
         <div className="animate-marquee font-oswald text-[#FEF8E8] text-base md:text-lg font-extrabold uppercase tracking-widest flex items-center gap-12 whitespace-nowrap">
           {Array.from({ length: 4 }).map((_, idx) => (
             <span key={idx} className="flex items-center gap-12">
-              <span>CREATIVE CODE</span>
+              <span>QUANTUM ML</span>
               <span className="text-[#FEF8E8]/55">✦</span>
-              <span>FULLSTACK DEVELOPER</span>
+              <span>FULL-STACK ENGINEER</span>
               <span className="text-[#FEF8E8]/55">✦</span>
-              <span>WEB DESIGNER</span>
+              <span>NEUROTECH FOUNDER</span>
               <span className="text-[#FEF8E8]/55">✦</span>
-              <span>ANIMATION SPECIALIST</span>
+              <span>AI SYSTEMS</span>
               <span className="text-[#FEF8E8]/55">✦</span>
-              <span>UI/UX INNOVATION</span>
+              <span>INNOVATION LEADER</span>
               <span className="text-[#FEF8E8]/55">✦</span>
             </span>
           ))}
