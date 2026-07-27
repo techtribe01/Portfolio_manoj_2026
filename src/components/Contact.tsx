@@ -164,7 +164,7 @@ export default function Contact() {
       id: "instagram",
       type: "capsule",
       label: "INSTAGRAM ↗",
-      href: "https://www.instagram.com/okeymanoj",
+      href: "https://www.instagram.com/manoj.explainss",
       initialX: "32%",
       initialY: "12%",
       rotate: -12,
@@ -205,22 +205,22 @@ export default function Contact() {
       rotate: -10,
     },
     {
-      id: "badge-heart",
-      type: "badge",
-      badgeType: "heart",
+      id: "website",
+      type: "capsule",
+      label: "WEBSITE ↗",
+      href: "https://manojt.vercel.app",
       initialX: "72%",
-      initialY: "35%",
-      rotate: 14,
+      initialY: "75%",
+      rotate: 8,
     },
     {
-      id: "send-message",
+      id: "phone",
       type: "capsule",
-      label: "SEND MESSAGE ✦",
-      isAction: true,
-      initialX: "62%",
-      initialY: "68%",
+      label: "CALL ME ↗",
+      href: "tel:+917093035732",
+      initialX: "58%",
+      initialY: "45%",
       rotate: 6,
-      isPrimary: true,
     },
   ];
 
@@ -300,19 +300,19 @@ export default function Contact() {
                 // Capsule Sticker Layout
                 <div
                   onClick={() => {
-                    if (sticker.isAction) {
+                    if ('isAction' in sticker && sticker.isAction) {
                       setShowFormModal(true);
-                    } else if (sticker.href) {
+                    } else if ('href' in sticker && sticker.href) {
                       window.open(sticker.href, "_blank", "noopener,noreferrer");
                     }
                   }}
                   className={`flex items-center gap-2 px-6 py-3.5 rounded-full border border-[#161616] font-jakarta font-bold text-sm md:text-base shadow-md transition-all duration-300 ${
-                    sticker.isPrimary
+                    ('isPrimary' in sticker && sticker.isPrimary)
                       ? "bg-[#F44A22] text-[#FEF8E8] hover:bg-[#F44A22]/90 border-[#161616] shadow-lg shadow-[#F44A22]/15"
                       : "bg-[#FEF8E8] text-[#161616] hover:bg-white border-[#161616]"
                   }`}
                 >
-                  <span>{sticker.label}</span>
+                  <span>{'label' in sticker && sticker.label}</span>
                 </div>
               ) : (
                 // Circular Badge Sticker Layout
