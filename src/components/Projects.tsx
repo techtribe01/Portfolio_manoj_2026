@@ -3,7 +3,7 @@
 import React, { useRef } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ExternalLink, Award, Sparkles, Code2, Globe } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
@@ -53,7 +53,7 @@ const projects: ProjectItem[] = [
     description: "EOG-based brain-computer interface achieving ~96% blink classification accuracy. Served as the founding tech for Neurocommand Labs startup.",
     tags: ["Neurotech", "BCI", "EOG", "Signal Processing", "Python"],
     image: "/projects/eyestalk.png",
-    githubUrl: "https://github.com/techtribe01",
+    githubUrl: "https://github.com/techtribe01/eyetalk3",
   },
   {
     id: "skillarion",
@@ -109,15 +109,15 @@ export default function Projects() {
     <section
       id="projects"
       ref={containerRef}
-      className="relative w-full min-h-screen bg-[#0d1117] text-[#f0f6fc] py-28 px-6 md:px-12 lg:px-20 flex flex-col items-center justify-center z-20 overflow-hidden font-jakarta"
+      className="relative w-full min-h-screen bg-palette-grey text-[#161616] py-28 px-6 md:px-12 lg:px-20 flex flex-col items-center justify-center z-20 overflow-hidden font-jakarta"
     >
-      {/* Decorative gradient glow backdrop */}
+      {/* Decorative Signature Orange Blur Backdrop */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-1/4 -left-40 w-96 h-96 bg-[#F44A22]/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-1/4 -right-40 w-96 h-96 bg-sky-500/10 rounded-full blur-[120px]" />
+        <div className="absolute top-1/4 -left-40 w-96 h-96 bg-[#F44A22]/10 rounded-full blur-[140px]" />
+        <div className="absolute bottom-1/4 -right-40 w-96 h-96 bg-[#F44A22]/10 rounded-full blur-[140px]" />
       </div>
 
-      {/* Top-Left Page Logo */}
+      {/* Top-Left Page Logo in Signature Samarkan Typography */}
       <div
         ref={titleRef}
         className="absolute top-6 left-8 z-20 text-[#F44A22] text-4xl tracking-widest pointer-events-none drop-shadow-md origin-center"
@@ -126,22 +126,22 @@ export default function Projects() {
         PROJECTS
       </div>
 
-      {/* Header Title Section */}
-      <div className="max-w-7xl w-full mx-auto mb-12 mt-8 z-10 flex flex-col md:flex-row justify-between items-start md:items-end gap-4 border-b border-slate-800/80 pb-6">
+      {/* Header Title Section in Website Signature Theme */}
+      <div className="max-w-7xl w-full mx-auto mb-12 mt-8 z-10 flex flex-col md:flex-row justify-between items-start md:items-end gap-4 border-b border-[#161616]/20 pb-6">
         <div>
-          <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#F44A22] mb-2 block">
+          <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#F44A22] mb-2 block font-jakarta">
             Featured Innovations &amp; Builds
           </span>
-          <h2 className="font-oswald text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tight text-white">
+          <h2 className="font-oswald text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tight text-[#161616]">
             PROJECT PORTFOLIO
           </h2>
         </div>
-        <p className="text-sm md:text-base text-slate-400 max-w-md leading-relaxed">
+        <p className="text-sm md:text-base text-[#161616]/75 max-w-md leading-relaxed font-jakarta">
           From quantum machine learning algorithms and brain-computer interfaces to high-performance enterprise web apps and blockchain solutions.
         </p>
       </div>
 
-      {/* Grid of Projects in Card Style */}
+      {/* Grid of Projects using Website Design Tokens */}
       <div
         ref={gridRef}
         className="max-w-7xl w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 z-10"
@@ -150,65 +150,65 @@ export default function Projects() {
           <motion.div
             key={project.id}
             whileHover={{ y: -6, transition: { duration: 0.3 } }}
-            className="group bg-[#161b22] border border-slate-800/90 hover:border-[#F44A22]/50 rounded-2xl p-5 md:p-6 flex flex-col justify-between shadow-xl hover:shadow-2xl hover:shadow-[#F44A22]/10 transition-all duration-500 overflow-hidden relative"
+            className="group bg-[#161616] text-[#FEF8E8] rounded-3xl p-6 md:p-8 border-4 border-[#161616] flex flex-col justify-between shadow-xl hover:shadow-2xl hover:border-[#F44A22] transition-all duration-500 overflow-hidden relative"
           >
             {/* Card Content Top */}
             <div>
               {/* Image Preview Banner */}
-              <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden mb-6 bg-slate-900 border border-slate-800/60">
+              <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden mb-6 bg-[#0a0a0a] border-2 border-[#FEF8E8]/10">
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out opacity-90 group-hover:opacity-100"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#161b22] via-transparent to-transparent opacity-60" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#161616] via-transparent to-transparent opacity-50" />
               </div>
 
               {/* Credential Badge */}
               {project.credential && (
-                <div className="inline-flex items-center gap-1.5 text-[11px] font-semibold tracking-wider text-[#F44A22] bg-[#F44A22]/10 border border-[#F44A22]/20 px-3 py-1 rounded-full mb-3 uppercase">
+                <div className="inline-flex items-center gap-1.5 text-[11px] font-bold tracking-wider text-[#F44A22] bg-[#F44A22]/15 border border-[#F44A22]/30 px-3 py-1 rounded-full mb-3 uppercase font-jakarta">
                   <span>{project.credential}</span>
                 </div>
               )}
 
               {/* Project Title */}
-              <h3 className="text-xl md:text-2xl font-bold font-jakarta text-white group-hover:text-[#F44A22] transition-colors duration-300 mb-3 tracking-tight">
+              <h3 className="text-2xl md:text-3xl font-bold font-oswald text-[#FEF8E8] group-hover:text-[#F44A22] transition-colors duration-300 mb-3 tracking-wide uppercase">
                 {project.title}
               </h3>
 
               {/* Project Description */}
-              <p className="text-slate-300 text-sm md:text-base leading-relaxed mb-6 font-normal">
+              <p className="text-[#E4E2E3]/90 text-sm md:text-base leading-relaxed mb-6 font-jakarta font-light">
                 {project.description}
               </p>
             </div>
 
             {/* Card Content Bottom: Tags & Action Links */}
             <div>
-              {/* Tech Stack Pills */}
+              {/* Tech Stack Pills in Site Theme */}
               <div className="flex flex-wrap gap-2 mb-6">
                 {project.tags.map((tag, idx) => (
                   <span
                     key={idx}
-                    className="bg-[#1f2937] text-sky-400 text-xs font-semibold px-3 py-1 rounded-full border border-sky-500/20"
+                    className="bg-[#FEF8E8]/10 text-[#FEF8E8] text-xs font-semibold px-3.5 py-1.5 rounded-full border border-[#FEF8E8]/20 font-jakarta tracking-wide"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
 
-              {/* Action Icons Bar */}
-              <div className="flex items-center gap-4 pt-4 border-t border-slate-800/80">
+              {/* Action Buttons Bar */}
+              <div className="flex items-center gap-4 pt-4 border-t border-[#FEF8E8]/15">
                 {project.githubUrl && (
                   <a
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-slate-400 hover:text-white transition-colors duration-300 flex items-center gap-1.5 text-xs font-medium group/link"
+                    className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#FEF8E8]/10 text-[#FEF8E8] hover:bg-[#F44A22] hover:text-white transition-all duration-300 text-xs font-bold font-jakarta tracking-wider uppercase group/link border border-[#FEF8E8]/20"
                     title="View Source Code on GitHub"
                   >
-                    <GithubIcon className="group-hover/link:text-[#F44A22] transition-colors" />
+                    <GithubIcon className="w-4 h-4 text-[#FEF8E8] group-hover/link:text-white transition-colors" />
                     <span>Code</span>
                   </a>
                 )}
@@ -218,10 +218,10 @@ export default function Projects() {
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-slate-400 hover:text-white transition-colors duration-300 flex items-center gap-1.5 text-xs font-medium group/link"
+                    className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#F44A22] text-[#FEF8E8] hover:bg-[#F44A22]/90 transition-all duration-300 text-xs font-bold font-jakarta tracking-wider uppercase group/link border border-[#F44A22]"
                     title="View Live Site"
                   >
-                    <ExternalLink size={20} className="group-hover/link:text-[#F44A22] transition-colors" />
+                    <ExternalLink size={16} className="text-[#FEF8E8]" />
                     <span>Live Demo</span>
                   </a>
                 )}
