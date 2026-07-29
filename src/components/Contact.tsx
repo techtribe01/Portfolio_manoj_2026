@@ -20,6 +20,7 @@ export default function Contact() {
   const footerEmailRef = useRef<HTMLDivElement>(null);
 
   const [copied, setCopied] = useState(false);
+  const [copiedPhone, setCopiedPhone] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const [showFormModal, setShowFormModal] = useState(false);
 
@@ -53,6 +54,16 @@ export default function Contact() {
       await navigator.clipboard.writeText("okeymanoj@gmail.com");
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error("Failed to copy text: ", err);
+    }
+  };
+
+  const handleCopyPhone = async () => {
+    try {
+      await navigator.clipboard.writeText("+917093035732");
+      setCopiedPhone(true);
+      setTimeout(() => setCopiedPhone(false), 2000);
     } catch (err) {
       console.error("Failed to copy text: ", err);
     }
@@ -137,10 +148,19 @@ export default function Contact() {
       id: "whatsapp",
       type: "capsule",
       label: "WHATSAPP ↗",
-      href: "https://wa.me/919876543210?text=Hi%20Manoj!%20I%20just%20came%20across%20your%20amazing%20portfolio%20and%20would%20love%20to%20connect.",
+      href: "https://wa.me/917093035732?text=Hi%20Manoj!%20I%20just%20came%20across%20your%20amazing%20portfolio%20and%20would%20love%20to%20connect.",
       initialX: "18%",
       initialY: "32%",
       rotate: 5,
+    },
+    {
+      id: "phone-call",
+      type: "capsule",
+      label: "PHONE: +91 7093035732 ↗",
+      href: "tel:+917093035732",
+      initialX: "14%",
+      initialY: "82%",
+      rotate: -4,
     },
     {
       id: "twitter",
@@ -226,6 +246,7 @@ export default function Contact() {
 
   return (
     <section
+      id="contact"
       ref={containerRef}
       className="relative w-full min-h-screen bg-palette-grey text-[#161616] py-24 flex flex-col justify-between z-20 overflow-hidden"
     >
@@ -408,33 +429,65 @@ export default function Contact() {
         })}
       </div>
 
-      {/* 3. Bottom Section: Giant Footer Email */}
+      {/* 3. Bottom Section: Footer Email & Phone */}
       <div 
         ref={footerEmailRef}
-        className="w-full flex flex-col items-center justify-center relative mt-auto px-6 py-4"
+        className="w-full flex flex-col items-center justify-center relative mt-auto px-6 py-4 gap-4"
       >
-        <span className="text-[10px] md:text-xs font-semibold font-jakarta tracking-[0.25em] text-[#161616]/50 uppercase mb-2">
-          Click To Copy Email
-        </span>
+        <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 w-full max-w-7xl">
+          {/* Email Container */}
+          <div className="flex flex-col items-center">
+            <span className="text-[10px] md:text-xs font-semibold font-jakarta tracking-[0.25em] text-[#161616]/50 uppercase mb-1">
+              Click To Copy Email
+            </span>
+            <h1
+              onClick={handleCopyEmail}
+              className="font-cormorant font-normal text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-none text-[#161616] hover:text-[#F44A22] active:scale-95 transition-all duration-300 text-center select-none cursor-pointer tracking-tighter break-all"
+            >
+              okeymanoj@gmail.com
+            </h1>
+          </div>
 
-        {/* Large Email Link */}
-        <h1
-          onClick={handleCopyEmail}
-          className="font-cormorant font-normal text-4xl sm:text-6xl md:text-7xl lg:text-[7.5rem] leading-none text-[#161616] hover:text-[#F44A22] active:scale-95 transition-all duration-500 text-center select-none cursor-pointer tracking-tighter w-full max-w-7xl break-all"
-        >
-          okeymanoj@gmail.com
-        </h1>
+          <div className="hidden md:block text-3xl text-[#F44A22]">✦</div>
 
-        {/* Floating Tooltip Indicator */}
+          {/* Phone Container */}
+          <div className="flex flex-col items-center">
+            <span className="text-[10px] md:text-xs font-semibold font-jakarta tracking-[0.25em] text-[#161616]/50 uppercase mb-1">
+              Call / Click To Copy Phone
+            </span>
+            <h1
+              onClick={handleCopyPhone}
+              className="font-cormorant font-normal text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-none text-[#161616] hover:text-[#F44A22] active:scale-95 transition-all duration-300 text-center select-none cursor-pointer tracking-tighter break-all"
+            >
+              +91 7093035732
+            </h1>
+          </div>
+        </div>
+
+        {/* Floating Tooltip Indicator for Email */}
         <AnimatePresence>
           {copied && (
             <motion.span
               initial={{ opacity: 0, y: 15, scale: 0.9 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 15, scale: 0.9 }}
-              className="absolute -top-12 bg-[#F44A22] text-[#FEF8E8] text-xs font-bold px-4 py-2 rounded-xl shadow-lg border border-[#161616] flex items-center gap-1.5"
+              className="absolute -top-12 bg-[#F44A22] text-[#FEF8E8] text-xs font-bold px-4 py-2 rounded-xl shadow-lg border border-[#161616] flex items-center gap-1.5 z-30"
             >
-              <Check size={14} /> Copied to Clipboard!
+              <Check size={14} /> Email Copied to Clipboard!
+            </motion.span>
+          )}
+        </AnimatePresence>
+
+        {/* Floating Tooltip Indicator for Phone */}
+        <AnimatePresence>
+          {copiedPhone && (
+            <motion.span
+              initial={{ opacity: 0, y: 15, scale: 0.9 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 15, scale: 0.9 }}
+              className="absolute -top-12 bg-[#F44A22] text-[#FEF8E8] text-xs font-bold px-4 py-2 rounded-xl shadow-lg border border-[#161616] flex items-center gap-1.5 z-30"
+            >
+              <Check size={14} /> Phone Number Copied!
             </motion.span>
           )}
         </AnimatePresence>

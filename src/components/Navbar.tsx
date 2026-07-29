@@ -117,21 +117,58 @@ const GlassFilter: React.FC = () => (
   </svg>
 );
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { usePageTransition } from "@/components/PageTransition";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function Navbar() {
   const pathname = usePathname();
-  const { startTransition } = usePageTransition();
+  const router = useRouter();
+  const [activeSection, setActiveSection] = useState("home");
 
   const navItems = [
-    { icon: <Home size={18} />, label: "Home", href: "/" },
-    { icon: <User size={18} />, label: "About", href: "/about" },
-    { icon: <Briefcase size={18} />, label: "Projects", href: "/projects" },
-    { icon: <Award size={18} />, label: "Awards", href: "/awards" },
-    { icon: <Mail size={18} />, label: "Contact", href: "/contact" },
+    { icon: <Home size={18} />, label: "Home", sectionId: "home", href: "/#home" },
+    { icon: <User size={18} />, label: "About", sectionId: "about", href: "/#about" },
+    { icon: <Briefcase size={18} />, label: "Projects", sectionId: "projects", href: "/#projects" },
+    { icon: <Award size={18} />, label: "Awards", sectionId: "awards", href: "/#awards" },
+    { icon: <Mail size={18} />, label: "Contact", sectionId: "contact", href: "/#contact" },
   ];
+
+  useEffect(() => {
+    const sections = ["home", "about", "projects", "awards", "contact"];
+    
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight / 3;
+      
+      for (const sectionId of sections) {
+        const el = document.getElementById(sectionId);
+        if (el) {
+          const top = el.offsetTop;
+          const height = el.offsetHeight;
+          if (scrollPosition >= top && scrollPosition < top + height) {
+            setActiveSection(sectionId);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleNavClick = (e: React.MouseEvent, item: typeof navItems[0]) => {
+    e.preventDefault();
+    const el = document.getElementById(item.sectionId);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+      window.history.pushState(null, "", `#${item.sectionId}`);
+      setActiveSection(item.sectionId);
+    } else {
+      router.push(`/#${item.sectionId}`);
+    }
+  };
 
   return (
     <>
@@ -140,17 +177,12 @@ export default function Navbar() {
         <GlassEffect className="rounded-full p-1.5 hover:p-2 hover:rounded-full transition-all duration-500">
           <div className="flex items-center justify-center gap-2 rounded-full p-1 overflow-hidden">
             {navItems.map((item, index) => {
-              const isActive = pathname === item.href;
+              const isActive = activeSection === item.sectionId;
               return (
-                <Link
+                <a
                   key={index}
                   href={item.href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    if (pathname !== item.href) {
-                      startTransition(item.href);
-                    }
-                  }}
+                  onClick={(e) => handleNavClick(e, item)}
                   className={`flex items-center px-4 py-2 rounded-full transition-all duration-500 hover:scale-105 cursor-pointer group ${
                     isActive
                       ? "bg-[#F44A22] text-white" // palette-orange
@@ -163,7 +195,7 @@ export default function Navbar() {
                 >
                   {item.icon}
                   <span className="ml-2 text-sm font-medium tracking-wide">{item.label}</span>
-                </Link>
+                </a>
               );
             })}
           </div>

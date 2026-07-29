@@ -240,7 +240,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative w-full h-screen bg-[#E4E2E3] overflow-hidden flex items-center justify-center select-none font-jakarta">
+    <section id="home" ref={containerRef} className="relative w-full h-screen bg-[#E4E2E3] overflow-hidden flex items-center justify-center select-none font-jakarta">
       {/* 1. Canvas Backdrop Tunnel (Interacts with Mouse Hover) */}
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-auto z-0" />
 

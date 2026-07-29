@@ -1,9 +1,14 @@
-import Awards from "@/components/Awards";
+"use client";
+
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function AwardsPage() {
-  return (
-    <main className="relative min-h-screen bg-[#FEF8E8]">
-      <Awards />
-    </main>
-  );
+  const router = useRouter();
+
+  useEffect(() => {
+    router.replace("/#awards");
+  }, [router]);
+
+  return null;
 }

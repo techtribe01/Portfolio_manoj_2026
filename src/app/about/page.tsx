@@ -1,9 +1,14 @@
-import About from "@/components/About";
+"use client";
+
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function AboutPage() {
-  return (
-    <main className="relative min-h-screen bg-palette-grey">
-      <About />
-    </main>
-  );
+  const router = useRouter();
+
+  useEffect(() => {
+    router.replace("/#about");
+  }, [router]);
+
+  return null;
 }
