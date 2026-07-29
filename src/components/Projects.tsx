@@ -3,9 +3,7 @@
 import React, { useRef } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
+import { ExternalLink, Award, Sparkles, Code2, Globe } from "lucide-react";
 
 const GithubIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
@@ -44,7 +42,7 @@ const projects: ProjectItem[] = [
     tags: ["Qiskit", "PennyLane", "Quantum ML", "Python"],
     image: "/projects/qadis.png",
     liveUrl: "https://qadis.vercel.app",
-    githubUrl: "https://github.com/techtribe01",
+    githubUrl: "https://github.com/techtribe01/Quantum_machine_Learning",
   },
   {
     id: "eyestalk",
@@ -72,143 +70,145 @@ const projects: ProjectItem[] = [
     description: "Decentralized digital token and campus currency transaction platform engineered for seamless peer-to-peer campus micro-transfers and transparent smart contract auditing.",
     tags: ["Blockchain", "Ethereum", "Smart Contracts", "Solidity", "Web3"],
     image: "/projects/ccoin.png",
-    githubUrl: "https://github.com/techtribe01/c-coin",
+    liveUrl: "c-coin.vercel.app",
+    githubUrl: "https://github.com/techtribe01/c2coin",
   },
 ];
 
 export default function Projects() {
   const containerRef = useRef<HTMLElement>(null);
-  const titleRef = useRef<HTMLDivElement>(null);
-  const gridRef = useRef<HTMLDivElement>(null);
 
-  useGSAP(
-    () => {
-      const tl = gsap.timeline({ delay: 0.2 });
-
-      tl.from(titleRef.current, {
-        y: -30,
-        opacity: 0,
-        duration: 0.8,
-        ease: "power3.out",
-      }).from(
-        gridRef.current ? gridRef.current.children : [],
-        {
-          y: 40,
-          opacity: 0,
-          duration: 0.8,
-          stagger: 0.15,
-          ease: "power3.out",
-        },
-        "-=0.4"
-      );
+  const itemVariants = {
+    hidden: { y: 40, opacity: 0, scale: 0.95 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: [0.34, 1.56, 0.64, 1] as any
+      }
     },
-    { scope: containerRef }
-  );
+    hover: {
+      y: -6,
+      transition: { duration: 0.3 }
+    }
+  };
 
   return (
     <section
       id="projects"
       ref={containerRef}
-      className="relative w-full min-h-screen bg-palette-grey text-[#161616] py-28 px-6 md:px-12 lg:px-20 flex flex-col items-center justify-center z-20 overflow-hidden font-jakarta"
+      className="relative w-full min-h-screen bg-[#FEF8E8] text-[#161616] py-28 px-6 md:px-12 lg:px-20 flex flex-col items-center justify-center z-20 overflow-hidden font-jakarta"
     >
-      {/* Decorative Signature Orange Blur Backdrop */}
+      {/* Decorative animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-1/4 -left-40 w-96 h-96 bg-[#F44A22]/10 rounded-full blur-[140px]" />
-        <div className="absolute bottom-1/4 -right-40 w-96 h-96 bg-[#F44A22]/10 rounded-full blur-[140px]" />
+        <div className="absolute top-1/4 -left-40 w-96 h-96 bg-[#F44A22]/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 -right-40 w-96 h-96 bg-blue-400/5 rounded-full blur-3xl" />
       </div>
 
-      {/* Top-Left Page Logo in Signature Samarkan Typography */}
-      <div
-        ref={titleRef}
+      {/* Top-Left Page Logo */}
+      <motion.div
+        initial={{ y: -30, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
         className="absolute top-6 left-8 z-20 text-[#F44A22] text-4xl tracking-widest pointer-events-none drop-shadow-md origin-center"
         style={{ fontFamily: "'Samarkan', sans-serif" }}
       >
         PROJECTS
-      </div>
+      </motion.div>
 
-      {/* Header Title Section in Website Signature Theme */}
-      <div className="max-w-7xl w-full mx-auto mb-12 mt-8 z-10 flex flex-col md:flex-row justify-between items-start md:items-end gap-4 border-b border-[#161616]/20 pb-6">
+      {/* Header Title Section */}
+      <motion.div 
+        initial={{ y: 30, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="max-w-7xl w-full mx-auto mb-12 mt-8 z-10 flex flex-col md:flex-row justify-between items-start md:items-end gap-4 border-b border-[#161616]/10 pb-6"
+      >
         <div>
-          <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#F44A22] mb-2 block font-jakarta">
+          <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#F44A22] mb-2 block">
             Featured Innovations &amp; Builds
           </span>
           <h2 className="font-oswald text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tight text-[#161616]">
             PROJECT PORTFOLIO
           </h2>
         </div>
-        <p className="text-sm md:text-base text-[#161616]/75 max-w-md leading-relaxed font-jakarta">
+        <p className="text-sm md:text-base text-[#161616]/70 max-w-md leading-relaxed">
           From quantum machine learning algorithms and brain-computer interfaces to high-performance enterprise web apps and blockchain solutions.
         </p>
-      </div>
+      </motion.div>
 
-      {/* Grid of Projects using Website Design Tokens */}
-      <div
-        ref={gridRef}
-        className="max-w-7xl w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 z-10"
-      >
-        {projects.map((project) => (
+      {/* Grid of Projects in Card Style */}
+      <div className="max-w-7xl w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 z-10">
+        {projects.map((project, index) => (
           <motion.div
             key={project.id}
-            whileHover={{ y: -6, transition: { duration: 0.3 } }}
-            className="group bg-[#161616] text-[#FEF8E8] rounded-3xl p-6 md:p-8 border-4 border-[#161616] flex flex-col justify-between shadow-xl hover:shadow-2xl hover:border-[#F44A22] transition-all duration-500 overflow-hidden relative"
+            variants={itemVariants}
+            initial="hidden"
+            whileInView="visible"
+            whileHover="hover"
+            viewport={{ once: true, margin: "-100px" }}
+            className="group bg-white/80 backdrop-blur-sm border-2 border-[#161616]/15 hover:border-[#F44A22]/60 rounded-2xl p-5 md:p-6 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden relative"
           >
             {/* Card Content Top */}
             <div>
               {/* Image Preview Banner */}
-              <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden mb-6 bg-[#0a0a0a] border-2 border-[#FEF8E8]/10">
+              <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden mb-6 bg-[#161616]/5 border border-[#161616]/10">
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out opacity-90 group-hover:opacity-100"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#161616] via-transparent to-transparent opacity-50" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-60" />
               </div>
 
               {/* Credential Badge */}
               {project.credential && (
-                <div className="inline-flex items-center gap-1.5 text-[11px] font-bold tracking-wider text-[#F44A22] bg-[#F44A22]/15 border border-[#F44A22]/30 px-3 py-1 rounded-full mb-3 uppercase font-jakarta">
+                <div className="inline-flex items-center gap-1.5 text-[11px] font-semibold tracking-wider text-[#F44A22] bg-[#F44A22]/10 border border-[#F44A22]/20 px-3 py-1 rounded-full mb-3 uppercase">
                   <span>{project.credential}</span>
                 </div>
               )}
 
               {/* Project Title */}
-              <h3 className="text-2xl md:text-3xl font-bold font-oswald text-[#FEF8E8] group-hover:text-[#F44A22] transition-colors duration-300 mb-3 tracking-wide uppercase">
+              <h3 className="text-xl md:text-2xl font-bold font-jakarta text-[#161616] group-hover:text-[#F44A22] transition-colors duration-300 mb-3 tracking-tight">
                 {project.title}
               </h3>
 
               {/* Project Description */}
-              <p className="text-[#E4E2E3]/90 text-sm md:text-base leading-relaxed mb-6 font-jakarta font-light">
+              <p className="text-[#161616]/75 text-sm md:text-base leading-relaxed mb-6 font-normal">
                 {project.description}
               </p>
             </div>
 
             {/* Card Content Bottom: Tags & Action Links */}
             <div>
-              {/* Tech Stack Pills in Site Theme */}
+              {/* Tech Stack Pills */}
               <div className="flex flex-wrap gap-2 mb-6">
                 {project.tags.map((tag, idx) => (
                   <span
                     key={idx}
-                    className="bg-[#FEF8E8]/10 text-[#FEF8E8] text-xs font-semibold px-3.5 py-1.5 rounded-full border border-[#FEF8E8]/20 font-jakarta tracking-wide"
+                    className="bg-[#161616]/5 text-[#161616] text-xs font-semibold px-3 py-1 rounded-full border border-[#161616]/10 font-mono"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
 
-              {/* Action Buttons Bar */}
-              <div className="flex items-center gap-4 pt-4 border-t border-[#FEF8E8]/15">
+              {/* Action Icons Bar */}
+              <div className="flex items-center gap-4 pt-4 border-t border-[#161616]/10">
                 {project.githubUrl && (
                   <a
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#FEF8E8]/10 text-[#FEF8E8] hover:bg-[#F44A22] hover:text-white transition-all duration-300 text-xs font-bold font-jakarta tracking-wider uppercase group/link border border-[#FEF8E8]/20"
+                    className="text-[#161616]/70 hover:text-[#F44A22] transition-colors duration-300 flex items-center gap-1.5 text-xs font-medium group/link"
                     title="View Source Code on GitHub"
                   >
-                    <GithubIcon className="w-4 h-4 text-[#FEF8E8] group-hover/link:text-white transition-colors" />
+                    <GithubIcon className="group-hover/link:text-[#F44A22] transition-colors" />
                     <span>Code</span>
                   </a>
                 )}
@@ -218,10 +218,10 @@ export default function Projects() {
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#F44A22] text-[#FEF8E8] hover:bg-[#F44A22]/90 transition-all duration-300 text-xs font-bold font-jakarta tracking-wider uppercase group/link border border-[#F44A22]"
+                    className="text-[#161616]/70 hover:text-[#F44A22] transition-colors duration-300 flex items-center gap-1.5 text-xs font-medium group/link"
                     title="View Live Site"
                   >
-                    <ExternalLink size={16} className="text-[#FEF8E8]" />
+                    <ExternalLink size={20} className="group-hover/link:text-[#F44A22] transition-colors" />
                     <span>Live Demo</span>
                   </a>
                 )}
