@@ -311,14 +311,14 @@ export default function Hero() {
 
         {/* Layer 3B: Centered Cutout Person Image (Avatar) */}
         <img 
-          src="/my-image.png" 
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Jul%2023%2C%202026%2C%2007_56_27%20PM-c8czAe8bIOblZ0h6oPPUsQSIlvJUzg.png" 
           alt="Manoj Kumar Thammisetti" 
           className="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 w-[95%] h-[82%] max-w-xl object-contain object-bottom drop-shadow-[0_20px_50px_rgba(0,0,0,0.25)] select-none pointer-events-none hidden lg:block" 
         />
         
         {/* Mobile/Tablet Fallback Image (Centered) */}
         <img 
-          src="/my-image.png" 
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Jul%2023%2C%202026%2C%2007_56_27%20PM-c8czAe8bIOblZ0h6oPPUsQSIlvJUzg.png" 
           alt="Manoj Kumar Thammisetti" 
           className="absolute bottom-40 left-1/2 -translate-x-1/2 z-20 w-[85%] h-[58%] object-contain object-bottom drop-shadow-[0_15px_30px_rgba(0,0,0,0.25)] select-none pointer-events-none lg:hidden"
         />
