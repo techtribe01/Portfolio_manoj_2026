@@ -14,6 +14,8 @@ interface Award {
   icon: string;
   color: string;
   images?: string[];
+  autoScroll?: boolean;
+  autoScrollInterval?: number;
 }
 
 const awards: Award[] = [
@@ -37,8 +39,8 @@ const awards: Award[] = [
   {
     id: 2,
     title: "1st Place",
-    event: "ImpactX Hackathon 2025",
-    description: "MITS College - Innovation-focused project development. Awarded ₹25,000/- prize money.",
+    event: "Impact X Hackathon 2025",
+    description: "Won 1st Prize at the Impact X Hackathon held at MITS Deemed to be University, awarded with ₹25,000/- prize money.",
     medal: "🥇",
     year: 2025,
     icon: "🚀",
@@ -47,9 +49,25 @@ const awards: Award[] = [
   },
   {
     id: 3,
+    title: "1st Prize",
+    event: "Project Expo 2025 — SIET",
+    description: "Project EyesTalk – Eye-Blink Controlled Communication System won 1st Prize at the Project Expo held on 31st January at Siddharth Institute of Engineering and Technology.",
+    medal: "🥇",
+    year: 2025,
+    icon: "👁️",
+    color: "from-emerald-500/20 to-teal-500/20",
+    images: [
+      "/achievements/eyestalk-expo-1.jpg",
+      "/achievements/eyestalk-expo-2.jpg"
+    ],
+    autoScroll: true,
+    autoScrollInterval: 1000
+  },
+  {
+    id: 4,
     title: "3rd Place",
-    event: "Siddharth HackFest 2025",
-    description: "SIET Puttur - Technical Excellence in Full-Stack Development & Innovation. Awarded 3rd Prize.",
+    event: "Siddharth Hackfest 2k25",
+    description: "Secured 3rd Prize at the Siddharth Hackfest 2k25, held on 27 & 28 March 2025 at Siddharth Institute of Engineering & Technology, Puttur, with a reward of ₹5,000.",
     medal: "🥉",
     year: 2025,
     icon: "🏆",
@@ -57,18 +75,18 @@ const awards: Award[] = [
     images: ["/achievements/siddharth-1.png"]
   },
   {
-    id: 4,
-    title: "Special Mention",
+    id: 5,
+    title: "Special Mention (5th Place)",
     event: "VIBEAITHON 2025",
-    description: "Kingston Engineering College - AI/ML Innovation",
+    description: "We secured the 5th place (Special Mention Award) for our innovative project EyeStalk 👁️, an IoT-based assistive device that enables paralyzed individuals to operate a computer screen using eye blinks.",
     medal: "🎖️",
     year: 2025,
     icon: "✨",
     color: "from-purple-500/20 to-pink-500/20",
-    images: []
+    images: ["/achievements/vibeaithon-1.jpg"]
   },
   {
-    id: 5,
+    id: 6,
     title: "Recognized Innovator",
     event: "Confluence: The Innovators Summit 2026",
     description: "Featured through RTIH for Neurotech Startup (Neurocommand Labs)",
@@ -80,7 +98,17 @@ const awards: Award[] = [
   }
 ];
 
-function AwardImageGallery({ images, eventTitle, autoScroll }: { images?: string[]; eventTitle: string; autoScroll?: boolean }) {
+function AwardImageGallery({
+  images,
+  eventTitle,
+  autoScroll,
+  autoScrollInterval = 3000
+}: {
+  images?: string[];
+  eventTitle: string;
+  autoScroll?: boolean;
+  autoScrollInterval?: number;
+}) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [selectedImgIndex, setSelectedImgIndex] = useState<number | null>(null);
 
@@ -105,9 +133,9 @@ function AwardImageGallery({ images, eventTitle, autoScroll }: { images?: string
           scrollRef.current.scrollTo({ left: scrollLeft + clientWidth, behavior: "smooth" });
         }
       }
-    }, 3000);
+    }, autoScrollInterval);
     return () => clearInterval(interval);
-  }, [autoScroll, images]);
+  }, [autoScroll, images, autoScrollInterval]);
 
   return (
     <>
@@ -306,7 +334,12 @@ export default function Awards() {
                 
                 {/* 1. Top Section: Side Scrolling Image Gallery */}
                 {award.images && award.images.length > 0 && (
-                  <AwardImageGallery images={award.images} eventTitle={award.event} autoScroll={award.id === 1} />
+                  <AwardImageGallery
+                    images={award.images}
+                    eventTitle={award.event}
+                    autoScroll={award.autoScroll ?? award.id === 1}
+                    autoScrollInterval={award.autoScrollInterval}
+                  />
                 )}
 
                 {/* 2. Bottom Section: Details Box */}

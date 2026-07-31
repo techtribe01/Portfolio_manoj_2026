@@ -86,7 +86,7 @@ export default function About() {
                   FULL-STACK ENGINEER &amp; INNOVATOR
                 </h2>
                 <p className="font-jakarta font-light text-base md:text-lg leading-relaxed text-[#E4E2E3]/95 max-w-2xl">
-                  I craft cutting-edge solutions spanning quantum machine learning, brain-computer interfaces, and full-stack web development. With a B.Tech in AI &amp; ML from SIETK (CGPA: 8.03), I bridge the gap between complex engineering and user-centric design to create meaningful, high-performance applications.
+                  I&apos;m Manoj Kumar Thammisetti — an AI/ML engineer and full-stack developer who doesn&apos;t just study quantum machine learning and brain-computer interfaces, I build and ship them. I built QADIS, a quantum-classical hybrid anomaly detection system running on Qiskit and PennyLane, and led it to Runner-Up at the Amaravati Quantum Valley Hackathon — an AP Government event where I presented my work directly to the Andhra Pradesh Chief Minister and IT Minister. I built EyesTalk, an EOG-based brain-computer interface hitting ~96% blink classification accuracy, documented in an IEEE-format paper, and turned it into my own startup, Neurocommand Labs, now incubated at the Ratan Tata Innovation Hub. I led the Skillarion Development website as Tech Lead, shipping it solo in Next.js 14, TypeScript, and Tailwind while running the company&apos;s infrastructure. I&apos;ve won 1st place at ImpactX Hackathon, 3rd at Siddharth HackFest, and a Special Mention at VIBEAITHON. I&apos;ve taught 1,000+ students as founder of Infinite Stackers, and I currently serve as AIMD Department President at SIETK — leading the department I studied AI/ML in, not just graduating from it. This isn&apos;t a portfolio of assignments. This is a track record of quantum systems, neurotech, and production code — built, proven, and recognized at the highest level
                 </p>
               </div>
 
@@ -159,7 +159,7 @@ export default function About() {
           >
             <img 
               src="/my-image.png" 
-              alt="Nand Kishore Soni"
+              alt="Manoj Kumar Thammisetti"
               className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out select-none pointer-events-auto"
             />
 

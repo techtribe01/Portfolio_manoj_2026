@@ -51,6 +51,7 @@ const projects: ProjectItem[] = [
     description: "EOG-based brain-computer interface achieving ~96% blink classification accuracy. Served as the founding tech for Neurocommand Labs startup.",
     tags: ["Neurotech", "BCI", "EOG", "Signal Processing", "Python"],
     image: "/projects/eyestalk.png",
+    liveUrl: "https://eyestalk3.vercel.app/",
     githubUrl: "https://github.com/techtribe01/eyetalk3",
   },
   {
@@ -116,7 +117,7 @@ export default function Projects() {
         className="absolute top-6 left-8 z-20 text-[#F44A22] text-4xl tracking-widest pointer-events-none drop-shadow-md origin-center"
         style={{ fontFamily: "'Samarkan', sans-serif" }}
       >
-        PROJECTS
+        FLAGSHIP PROJECTS
       </motion.div>
 
       {/* Header Title Section */}
@@ -132,7 +133,7 @@ export default function Projects() {
             Featured Innovations &amp; Builds
           </span>
           <h2 className="font-oswald text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tight text-[#161616]">
-            PROJECT PORTFOLIO
+            FLAGSHIP PROJECTS
           </h2>
         </div>
         <p className="text-sm md:text-base text-[#161616]/70 max-w-md leading-relaxed">

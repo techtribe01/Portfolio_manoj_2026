@@ -129,7 +129,7 @@ export default function Navbar() {
   const navItems = [
     { icon: <Home size={18} />, label: "Home", sectionId: "home", href: "/#home" },
     { icon: <User size={18} />, label: "About", sectionId: "about", href: "/#about" },
-    { icon: <Briefcase size={18} />, label: "Projects", sectionId: "projects", href: "/#projects" },
+    { icon: <Briefcase size={18} />, label: "Flagship Projects", sectionId: "projects", href: "/#projects" },
     { icon: <Award size={18} />, label: "Awards", sectionId: "awards", href: "/#awards" },
     { icon: <Mail size={18} />, label: "Contact", sectionId: "contact", href: "/#contact" },
   ];
