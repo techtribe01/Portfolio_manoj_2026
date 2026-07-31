@@ -155,12 +155,12 @@ export default function About() {
           {/* Right Column: Grayscale-to-Color Portrait Block */}
           <div 
             ref={portraitRef} 
-            className="lg:col-span-5 relative w-full h-[450px] md:h-[500px] lg:h-auto rounded-3xl border-4 border-[#161616] overflow-hidden bg-gray-100 group order-1 lg:order-2"
+            className="lg:col-span-5 relative w-full h-[450px] md:h-[500px] lg:h-[540px] rounded-3xl border-4 border-[#161616] overflow-hidden bg-gradient-to-b from-[#FEF8E8] via-[#FDE68A]/30 to-[#F44A22]/20 group order-1 lg:order-2 flex items-end justify-center pt-6"
           >
             <img 
               src="/my-image.png" 
               alt="Manoj Kumar Thammisetti"
-              className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out select-none pointer-events-auto"
+              className="max-h-full w-auto object-contain object-bottom filter grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out select-none pointer-events-auto"
             />
 
             {/* Mockup Overlay Badges */}
