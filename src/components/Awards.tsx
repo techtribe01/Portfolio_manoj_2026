@@ -89,12 +89,12 @@ const awards: Award[] = [
     id: 6,
     title: "Recognized Innovator",
     event: "Confluence: The Innovators Summit 2026",
-    description: "Featured through RTIH for Neurotech Startup (Neurocommand Labs)",
+    description: "Awarded Certificate of Participation for project EyesTalk in recognition of outstanding creativity, innovation, and dedication at CONFLUENCE - The Innovators Summit 2026, organized by Ratan Tata Innovation Hub (RTIH) - Tirupati.",
     medal: "🌟",
     year: 2026,
     icon: "🧠",
     color: "from-indigo-500/20 to-purple-500/20",
-    images: []
+    images: ["/achievements/confluence-2026.jpg"]
   }
 ];
 
