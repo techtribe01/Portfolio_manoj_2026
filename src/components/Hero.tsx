@@ -13,7 +13,7 @@ export default function Hero() {
         <div className="flex flex-1 flex-col justify-center">
           <div className="mb-8 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.24em] text-primary">
             <span className="size-2 rounded-full bg-primary shadow-[0_0_18px_hsl(var(--primary))]" />
-            Available for ambitious AI products
+            AI engineer focused on intelligent products
           </div>
           <div className="grid items-end gap-12 lg:grid-cols-[1.2fr_0.8fr]">
             <div>
@@ -24,7 +24,7 @@ export default function Hero() {
             </div>
             <div className="flex flex-col gap-7 pb-2 lg:max-w-sm">
               <p className="text-lg leading-relaxed text-muted-foreground">
-                AI Engineer and builder working across machine learning, LLM applications, data science, and generative AI.
+                AI Engineer working across machine learning, data science, LLM applications, and generative AI.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link href="#projects" className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-1">
@@ -38,9 +38,9 @@ export default function Hero() {
           </div>
           <div className="mt-20 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-3">
             {[
-              [BrainCircuit, "01", "Model to product", "Research-minded systems with a path to production."],
-              [Database, "02", "Data in motion", "Reliable pipelines, meaningful signals, measurable outcomes."],
-              [Sparkles, "03", "Human impact", "Technology that feels useful, clear, and considered."],
+              [BrainCircuit, "01", "Model to product", "From experiments to dependable AI products."],
+              [Database, "02", "Data in motion", "Clean data, useful signals, measurable outcomes."],
+              [Sparkles, "03", "Human impact", "Clear technology built around real human needs."],
             ].map(([Icon, number, title, copy]) => (
               <div key={number as string} className="bg-card p-6">
                 <div className="mb-10 flex items-center justify-between text-primary"><Icon className="size-5" /><span className="font-mono text-xs text-muted-foreground">{number as string}</span></div>

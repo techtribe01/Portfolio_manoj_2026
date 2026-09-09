@@ -9,7 +9,7 @@ const geistMono = localFont({ src: "./fonts/GeistMonoVF.woff", variable: "--font
 
 export const metadata: Metadata = {
   title: "Manoj Kumar Thammisetti | AI Engineer & ML Builder",
-  description: "Portfolio of Manoj Kumar Thammisetti — AI Engineer, Data Scientist, ML Engineer, LLM Engineer, and GenAI builder.",
+  description: "Manoj Kumar Thammisetti — AI Engineer, Data Scientist, ML Engineer, LLM Engineer, and GenAI Engineer.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
