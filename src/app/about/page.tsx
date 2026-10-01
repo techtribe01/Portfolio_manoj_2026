@@ -1,14 +1,5 @@
-"use client";
-
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
+import About from "@/components/About";
 
 export default function AboutPage() {
-  const router = useRouter();
-
-  useEffect(() => {
-    router.replace("/#about");
-  }, [router]);
-
-  return null;
+  return <About />;
 }
