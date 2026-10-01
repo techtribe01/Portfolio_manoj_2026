@@ -273,9 +273,12 @@ export default function Hero() {
             </div>
           </div>
           {/* Bio Text */}
-          <p className="text-[#161616]/85 text-xs font-jakarta leading-relaxed font-medium mt-1">
-            Full-stack engineer &amp; innovator in quantum ML, neurotech, and AI systems. B.Tech in AI &amp; ML (SIETK, 2026). Founder of Neurocommand Labs &amp; Infinite Stackers.
-          </p>
+          <div className="text-[#161616]/85 text-xs font-jakarta leading-relaxed font-medium mt-1">
+            <span className="block">AI engineer and building Agentic AI solutions</span>
+            <span className="block">Founder, NeuroCommand Labs</span>
+            <span className="block">AIMD department president, 25-26</span>
+            <span className="block">thought AI:1,000+ students</span>
+          </div>
           {/* Call to Action Button */}
           <button 
             onClick={() => startTransition("/contact")}
@@ -367,15 +370,21 @@ export default function Hero() {
         <div className="animate-marquee font-oswald text-[#FEF8E8] text-base md:text-lg font-extrabold uppercase tracking-widest flex items-center gap-12 whitespace-nowrap">
           {Array.from({ length: 4 }).map((_, idx) => (
             <span key={idx} className="flex items-center gap-12">
-              <span>QUANTUM ML</span>
+              <span>Taught 1,000+ students.</span>
               <span className="text-[#FEF8E8]/55">✦</span>
-              <span>FULL-STACK ENGINEER</span>
+              <span>AIML Department President</span>
               <span className="text-[#FEF8E8]/55">✦</span>
-              <span>NEUROTECH FOUNDER</span>
+              <span>AI engineer.</span>
               <span className="text-[#FEF8E8]/55">✦</span>
-              <span>AI SYSTEMS</span>
+              <span>Problem solver.</span>
               <span className="text-[#FEF8E8]/55">✦</span>
-              <span>INNOVATION LEADER</span>
+              <span>Building agentic AI.</span>
+              <span className="text-[#FEF8E8]/55">✦</span>
+              <span>Founder, Neurocommand Labs.</span>
+              <span className="text-[#FEF8E8]/55">✦</span>
+              <span>Neurotech startup with the AP government.</span>
+              <span className="text-[#FEF8E8]/55">✦</span>
+              <span>Quantum builder</span>
               <span className="text-[#FEF8E8]/55">✦</span>
             </span>
           ))}
