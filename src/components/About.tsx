@@ -87,7 +87,7 @@ export default function About() {
             <img
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260812_174622942_PORTRAIT~2-bu3lhE4zQR54VxLmRiEMVbrsJHpnEq.jpg"
               alt="Manoj Kumar Thammisetti standing outdoors"
-              className="h-full w-full object-contain object-center"
+              className="h-full w-full object-cover object-center"
             />
           </div>
 

@@ -274,12 +274,11 @@ export default function Hero() {
           </div>
           {/* Bio Text */}
           <p className="text-[#161616]/85 text-xs font-jakarta leading-relaxed font-medium mt-1 whitespace-pre-line">
-            AI engineer, Building agentic AI sloutions.
-            Founder, Neurocommand Labs.
+            AI engineer and building authentic AI solutions
+            Founder of NeuroCommand Labs
             3x hackathon winner
-            AIML Department President, 2025-26
-            Taught 1,000+ students
-            Quantum builder, new technology adapter
+            AIMD department president 2025-26
+            Thought AI: 2,000+ students
           </p>
           {/* Call to Action Button */}
           <button 
