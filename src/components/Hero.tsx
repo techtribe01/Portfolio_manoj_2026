@@ -275,9 +275,9 @@ export default function Hero() {
           {/* Bio Text */}
           <div className="text-[#161616]/85 text-xs font-jakarta leading-relaxed font-medium mt-1">
             <span className="block">AI engineer and building Agentic AI solutions</span>
-            <span className="block">&quot;Founder, NeuroCommand Labs&quot;</span>
-            <span className="block">&quot;AIMD department president, 25-26&quot;</span>
-            <span className="block">&quot;thought AI:1,000+ students&quot;</span>
+            <span className="block">Founder, NeuroCommand Labs</span>
+            <span className="block">AIMD department president, 25-26</span>
+            <span className="block">thought AI:1,000+ students</span>
           </div>
           {/* Call to Action Button */}
           <button 
