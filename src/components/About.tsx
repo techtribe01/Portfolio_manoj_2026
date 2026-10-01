@@ -84,8 +84,11 @@ export default function About() {
             ref={portraitRef} 
             className="lg:col-span-5 relative w-full h-[450px] md:h-[500px] lg:h-[540px] rounded-3xl border-4 border-[#161616] overflow-hidden bg-gradient-to-b from-[#FEF8E8] via-[#FDE68A]/30 to-[#F44A22]/20 group order-1 lg:order-2 flex items-end justify-center pt-6"
           >
-            {/* Replacement photo area: add the new image inside this preserved container. */}
-
+            <img
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260812_174622942_PORTRAIT~2-bu3lhE4zQR54VxLmRiEMVbrsJHpnEq.jpg"
+              alt="Manoj Kumar Thammisetti standing outdoors"
+              className="h-full w-full object-contain object-center"
+            />
           </div>
 
         </div>
